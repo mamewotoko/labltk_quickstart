@@ -44,7 +44,7 @@ endif
 export TOPSUFFIX
 
 # Eventually set include- and library-paths, libraries to link,
-o# additional compilation-, link- and ocamlyacc-flags
+# additional compilation-, link- and ocamlyacc-flags
 # Path- and library information needs not be written with "-I" and such...
 # Define THREADS if you need it, otherwise leave it unset (same for
 # USE_CAMLP4)!
