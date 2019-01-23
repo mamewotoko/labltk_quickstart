@@ -1,0 +1,18 @@
+# dummy language setting: ocaml
+language: c
+sudo: required
+install:
+  - bash -ex .travis-ocaml.sh
+  - eval $(opam env); sh setup-opam
+script:
+  - eval $(opam env); make
+env:
+  # - OCAML_VERSION=4.02
+  # - OCAML_VERSION=4.03
+  # - OCAML_VERSION=4.04
+  # - OCAML_VERSION=4.05
+  - OCAML_VERSION=4.06
+  - OCAML_VERSION=4.07
+os:
+  - linux
+  # - osx
