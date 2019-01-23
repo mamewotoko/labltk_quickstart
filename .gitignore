@@ -1,3 +1,5 @@
 .vagrant
 ._d
 tk_app
+*.cm[xio]
+*.o
