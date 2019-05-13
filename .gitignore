@@ -3,3 +3,8 @@
 tk_app
 *.cm[xio]
 *.o
+
+_opam
+_build
+.merlin
+dune-project

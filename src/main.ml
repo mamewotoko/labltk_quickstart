@@ -1,7 +1,6 @@
-open Tk
-
 let main () = 
-  let window = Tk.openTk () in
+  Tk.openTk ()
+  |> ignore;
   Tk.mainLoop ()
 ;;
   

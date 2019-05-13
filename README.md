@@ -38,8 +38,25 @@ Build
 Run
 ----
 
+### 1. Direct
+
 ```bash
 ./tk_app
+```
+
+### 2. dune
+
+1. install dune
+
+```bash
+opam install dune
+```
+
+2. build and run
+
+```bash
+opam install dune
+dune exec src/main.exe
 ```
 
 References
