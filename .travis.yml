@@ -8,7 +8,7 @@ script:
   - eval $(opam env); make
   # dune
   - opam install dune
-  - timeout --kill-after=60 dune exec src/main.exe
+  - timeout 60s dune exec src/main.exe
   
 env:
   # - OCAML_VERSION=4.02
