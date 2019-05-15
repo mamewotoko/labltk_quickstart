@@ -4,11 +4,12 @@ sudo: required
 install:
   - bash -ex .travis-ocaml.sh
   - eval $(opam env); sh setup-opam
+  - sudo apt install -y xvfb
 script:
   - eval $(opam env); make
   # dune
   - opam install dune
-  - timeout 60s dune exec src/main.exe
+  - timeout 60s xvfb-run -a dune exec src/main.exe
   
 env:
   # - OCAML_VERSION=4.02
