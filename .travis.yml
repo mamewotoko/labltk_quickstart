@@ -9,8 +9,15 @@ script:
   - eval $(opam env); make
   # dune
   - opam install dune
-  - timeout 60s xvfb-run -a dune exec src/main.exe
-  
+  # screenshot
+  - "curl -L 'https://drive.google.com/uc?id=1Ej8VgsW5RgK66Btb9p74tSdHMH3p4UNb&export=download' > gdrive"
+  - chmod +x gdrive
+
+  - timeout --preserve-status 60s xvfb-run -n 99 dune exec src/main.exe &
+  - sleep 3
+  - xwd -display :99 | convert - screenshot.png
+  - sh ci/upload.sh
+
 env:
   # - OCAML_VERSION=4.02
   # - OCAML_VERSION=4.03
