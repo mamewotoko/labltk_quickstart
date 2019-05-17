@@ -4,7 +4,7 @@ sudo: required
 install:
   - bash -ex .travis-ocaml.sh
   - eval $(opam env); sh setup-opam
-  - sudo apt install -y xvfb x11-app
+  - sudo apt install -y xvfb x11-apps
 
 script:
   - eval $(opam env); make
