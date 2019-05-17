@@ -4,7 +4,8 @@ sudo: required
 install:
   - bash -ex .travis-ocaml.sh
   - eval $(opam env); sh setup-opam
-  - sudo apt install -y xvfb
+  - sudo apt install -y xvfb x11-app
+
 script:
   - eval $(opam env); make
   # dune
