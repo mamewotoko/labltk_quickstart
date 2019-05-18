@@ -19,7 +19,7 @@ script:
 
   - "curl -LO https://raw.githubusercontent.com/mamewotoko/xvfb-screenshooter/master/xvfb-screenshooter.sh"
   - chmod +x xvfb-screenshooter.sh
-  - "./xvfb-screenshooter.sh timeout 10s dune exec src/main.exe &"
+  - "./xvfb-screenshooter.sh timeout 10s dune exec src/main.exe"
   - sh ci/upload.sh
 
 env:
