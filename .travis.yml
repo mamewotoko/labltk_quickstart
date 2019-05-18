@@ -4,10 +4,10 @@ sudo: required
 install:
   - bash -ex .travis-ocaml.sh
   - eval $(opam env); sh setup-opam
-  - sudo apt-get -y install software-properties-common
-  - sudo add-apt-repository ppa:mc3man/trusty-media
-  - sudo apt-get update  
-  - sudo apt install -y xvfb x11-apps imagemagick ffmpeg
+#  - sudo apt-get -y install software-properties-common
+#  - sudo add-apt-repository ppa:mc3man/trusty-media
+#  - sudo apt-get update  
+  - sudo apt install -y xvfb x11-apps imagemagick 
 
 script:
   - eval $(opam env); make
