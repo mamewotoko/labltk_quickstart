@@ -14,9 +14,9 @@ script:
   - "curl -L 'https://drive.google.com/uc?id=1Ej8VgsW5RgK66Btb9p74tSdHMH3p4UNb&export=download' > gdrive"
   - chmod +x gdrive
 
-  - timeout --preserve-status 60s xvfb-run -n 99 dune exec src/main.exe &
-  - sleep 3
-  - xwd -display :99 | convert - screenshot.png
+  - "curl -LO https://raw.githubusercontent.com/mamewotoko/xvfb-screenshooter/master/xvfb-screenshooter.sh"
+  - chmod +x xvfb-screenshooter.sh
+  - "./xvfb-screenshooter.sh timeout 10s dune exec src/main.exe &"
   - sh ci/upload.sh
 
 env:
