@@ -68,7 +68,8 @@ travis - screencapture(png) -> google drive
 ```
 
 ### configurations
-configure following environment variable using travis configuration web ui
+configure following environment variable using travis configuration web ui.
+Please read [Artifact Deployment via Google Drive](https://joeyrobert.org/2016/07/13/artifact-deployment-via-google-drive/)
 
 * GDRIVE_REFRESH_TOKEN
 * GDRIVE_DIR
@@ -77,6 +78,8 @@ References
 ----------
 
 * [LablTk](http://labltk.forge.ocamlcore.org/)
+* [dune](https://dune.readthedocs.io/en/latest/index.html)
+  * A build system for Ocaml and Reason
 * [mmottl/ocaml-makefile](https://github.com/mmottl/ocaml-makefile)
 
 ----
