@@ -59,6 +59,20 @@ opam install dune
 dune exec src/main.exe
 ```
 
+CI
+---
+
+```
+travis - screencapture(png) -> google drive
+                      (ogv)
+```
+
+### configurations
+configure following environment variable using travis configuration web ui
+
+* GDRIVE_REFRESH_TOKEN
+* GDRIVE_DIR
+
 References
 ----------
 
