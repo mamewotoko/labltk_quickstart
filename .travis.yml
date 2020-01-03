@@ -24,7 +24,7 @@ script:
   # dune
   - opam install dune
   # screenshot
-  - "curl -L 'https://drive.google.com/uc?id=1Ej8VgsW5RgK66Btb9p74tSdHMH3p4UNb&export=download' > gdrive"
+  - "curl -fsSL https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64 > gdrive"
   - chmod +x gdrive
 
   - "curl -LO https://raw.githubusercontent.com/mamewotoko/xvfb-screenshooter/master/xvfb-screenshooter.sh"
