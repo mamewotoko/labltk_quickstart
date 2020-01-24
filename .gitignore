@@ -1,7 +1,8 @@
 .vagrant
+.merlin
 ._d
 tk_app
-*.cm[xio]
+*.cm[xiot]
 *.o
 
 _opam
