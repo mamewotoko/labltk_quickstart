@@ -4,11 +4,11 @@ labltk_quickstart [![Build Status](https://travis-ci.org/mamewotoko/labltk_quick
 ![screenshot](doc/tk_screenshot.png)
 
 Build
--------
+-----
 
-### Vagrant (ubuntu 16.04)
+### Vagrant (ubuntu 20.04 ubuntu/focal64)
 
-1. install [vagrant](https://www.vagrantup.com/downloads.html)
+1. install [vagrant](https://www.vagrantup.com/downloads.html) and [Oracle VM VirtualBox](https://www.virtualbox.org/)
 2. start vagrant box
 
     ```bash
@@ -26,36 +26,38 @@ Build
     ```bash
     # source directory mounted to virtualbox
     cd /vagrant
-    sh setup-opam
+    ./setup.sh
     ```
 
-4. make
+5. method1: build with OcmalMakefile
 
     ```bash
     make
     ```
 
-Run
-----
-
-### 1. Direct
+6. Run
 
 ```bash
 ./tk_app
 ```
 
-### 2. dune
+### Another build tool: dune
 
-1. install dune
+1. Install dune
 
 ```bash
 opam install dune
 ```
 
-2. build and run
+### 3. Build
 
 ```bash
-opam install dune
+dune build src/main.exc
+```
+
+### 4. Run
+
+```bash
 dune exec src/main.exe
 ```
 
@@ -67,7 +69,7 @@ travis - screencapture(png) -> google drive
                       (ogv)
 ```
 
-### configurations
+### CI Configurations
 configure following environment variable using travis configuration web ui.
 Please read [Artifact Deployment via Google Drive](https://joeyrobert.org/2016/07/13/artifact-deployment-via-google-drive/)
 
