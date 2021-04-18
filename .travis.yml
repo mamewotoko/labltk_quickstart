@@ -16,18 +16,23 @@ install:
 script:
 - eval $(opam env); make
 - opam install -y dune
-- curl -u $AUTH -fsSLO https://mamewo.ddo.jp/private/gdrive
-- chmod +x gdrive
 - curl -fsSLO https://raw.githubusercontent.com/mamewotoko/xvfb-screenshooter/master/xvfb-screenshooter.sh
 - chmod +x xvfb-screenshooter.sh
 - "./xvfb-screenshooter.sh timeout 10s dune exec src/main.exe"
-- sh ci/upload.sh
+#- curl -u $AUTH -fsSLO https://mamewo.ddo.jp/private/gdrive
+#- chmod +x gdrive
+#- sh ci/upload.sh
+os:
+- linux
 env:
   matrix:
   - OCAML_VERSION=4.06
   - OCAML_VERSION=4.07
-  global:
-    # credential to download gdrive
-    secure: yuL1Aaf2OoR8E/v2g683MwqgKQQNoaek49CEs7FjlGp33FGO2+KfKTXI7HTZEqT/FGChKrO/y4TgrWN3N8bN4ijUT/p5qIt7KDjSwUV5no17Bjl0nU7AaSku/D+hNlURMQwTpsJ3K079jxrXxaZrKMSoVlilPAjCpp2DRCqrtqLhqOfWXojZV1yZsmUMRcBnlEwd9QaYaifDaNqql4tUORFYKeZ0Z/xUvwFbKfwoYI0vJAPki+OfQ0N7HSlaENuLQ+3MmZqlWLAnqNDWvaK3Cs44uEqGmOEb+jfKQ+czv/fq/8Qyc1fL77KQfjTNz5GJ3oT0sXbCz7SqCNeI1csdXeJasA30gTszYIMKOjII9EIURI3tpbk9gs65t866ZVwqSdn2aygIsCUnj7nDw3vU3U0mg8rRL4E3OucDlNCucZolxjK2DbYNZ0HyAepC/LVst6TXWSD3aS5GZSvMulEgNsD5JUUJFwj87fMazrY2iV5cHuOurdtEk+hrAvpoR6FZjq9x2uBMB9tJAShJAoh0v3XP3C8/Xcutv5k0xcV+BitlnhKzbv7mC3Ivpghl/UIXJ23t7nBAnbL3BHgeEuvKIzK/oYBcSk2Vyy/ArZhiL7tG8yH47zo+elnscByp3jz6IBir8cjjJ4kR+kfwqaGHOZrFabxJW4g6vhhwMT6/LBs=
-os:
-- linux
+  # global:
+  #   # credential to download gdrive
+  #   secure: yuL1Aaf2OoR8E/v2g683MwqgKQQNoaek49CEs7FjlGp33FGO2+KfKTXI7HTZEqT/FGChKrO/y4TgrWN3N8bN4ijUT/p5qIt7KDjSwUV5no17Bjl0nU7AaSku/D+hNlURMQwTpsJ3K079jxrXxaZrKMSoVlilPAjCpp2DRCqrtqLhqOfWXojZV1yZsmUMRcBnlEwd9QaYaifDaNqql4tUORFYKeZ0Z/xUvwFbKfwoYI0vJAPki+OfQ0N7HSlaENuLQ+3MmZqlWLAnqNDWvaK3Cs44uEqGmOEb+jfKQ+czv/fq/8Qyc1fL77KQfjTNz5GJ3oT0sXbCz7SqCNeI1csdXeJasA30gTszYIMKOjII9EIURI3tpbk9gs65t866ZVwqSdn2aygIsCUnj7nDw3vU3U0mg8rRL4E3OucDlNCucZolxjK2DbYNZ0HyAepC/LVst6TXWSD3aS5GZSvMulEgNsD5JUUJFwj87fMazrY2iV5cHuOurdtEk+hrAvpoR6FZjq9x2uBMB9tJAShJAoh0v3XP3C8/Xcutv5k0xcV+BitlnhKzbv7mC3Ivpghl/UIXJ23t7nBAnbL3BHgeEuvKIzK/oYBcSk2Vyy/ArZhiL7tG8yH47zo+elnscByp3jz6IBir8cjjJ4kR+kfwqaGHOZrFabxJW4g6vhhwMT6/LBs=
+# TODO: upload to aws s3
+# ARTIFACTS_KEY=(**encripted** AWS access key id)
+# ARTIFACTS_SECRET=(**encripted**AWS secret access key)
+# ARTIFACTS_BUCKET=(S3 bucket name) 
+# ARTIFACTS_REGION=xxx
