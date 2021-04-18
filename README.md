@@ -1,4 +1,4 @@
-labltk_quickstart [![Build Status](https://travis-ci.org/mamewotoko/labltk_quickstart.svg?branch=master)](https://travis-ci.org/mamewotoko/labltk_quickstart)
+labltk_quickstart [![Build Status](https://travis-ci.com/mamewotoko/labltk_quickstart.svg?branch=master)](https://travis-ci.com/mamewotoko/labltk_quickstart)
 ==================
 
 ![screenshot](doc/tk_screenshot.png)
